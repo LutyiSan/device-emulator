@@ -7,11 +7,11 @@ TRANSPORT = "websockets"
 # URL path: tcp or ws
 PATH = "/ws"
 # User login
-USER_NAME = "user"
+USER_NAME = "any"
 # User password
-USER_PASS = "user"
+USER_PASS = "any"
 # Broker address
-HOST = "mq.4iot.pro"
+HOST = "broker.com"
 # Broker port
 PORT = 15675
 # Send interval
