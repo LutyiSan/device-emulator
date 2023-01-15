@@ -22,6 +22,10 @@ my_itp = {"name": "itp",
           "dps-2": False,
           "dps-3": False,
           "dps-4": True,
+          'start-pump-1': True,
+          'start-pump-2': False,
+          'start-pump-3': False,
+          'start-pump-4': True,
           "set-gvs-temp": 50,
           "set-ot-temp": 65,
           'case': 1
@@ -75,14 +79,30 @@ def valve_set():
 
 
 def pump_set():
-    my_itp["pump-1"] = True
-    my_itp["pump-2"] = False
-    my_itp["pump-3"] = False
-    my_itp["pump-4"] = True
-    my_itp["dps-1"] = True
-    my_itp["dps-2"] = False
-    my_itp["dps-3"] = False
-    my_itp["dps-4"] = True
+    if my_itp['start-pump-1']:
+        my_itp["pump-1"] = True
+        my_itp["dps-1"] = True
+    else:
+        my_itp["pump-1"] = False
+        my_itp["dps-1"] = False
+    if my_itp['start-pump-2']:
+        my_itp["pump-2"] = True
+        my_itp["dps-2"] = True
+    else:
+        my_itp["pump-2"] = False
+        my_itp["dps-2"] = False
+    if my_itp['start-pump-3']:
+        my_itp["pump-3"] = True
+        my_itp["dps-3"] = True
+    else:
+        my_itp["pump-3"] = False
+        my_itp["dps-3"] = False
+    if my_itp['start-pump-4']:
+        my_itp["pump-4"] = True
+        my_itp["dps-4"] = True
+    else:
+        my_itp["pump-4"] = False
+        my_itp["dps-4"] = False
 
 
 def pump_control(pump, state):
@@ -91,3 +111,4 @@ def pump_control(pump, state):
         my_itp[pump] = True
     else:
         my_itp[pump] = False
+    pump_set()

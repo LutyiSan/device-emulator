@@ -109,22 +109,22 @@ def light_control(json_data):
 
 
 def itp_control(json_data):
-    if 'pump-1' in json_data.keys():
-        pump_control('pump-1', json_data['pump-1'])
-    if 'pump-2' in json_data.keys():
-        pump_control('pump-2', json_data['pump-2'])
-    if 'pump-3' in json_data.keys():
-        pump_control('pump-3', json_data['pump-3'])
-    if 'pump-4' in json_data.keys():
-        pump_control('pump-4', json_data['pump-4'])
+    if 'start-pump-1' in json_data.keys():
+        pump_control('start-pump-1', json_data['start-pump-1'])
+    if 'start-pump-2' in json_data.keys():
+        pump_control('start-pump-2', json_data['start-pump-2'])
+    if 'start-pump-3' in json_data.keys():
+        pump_control('start-pump-3', json_data['start-pump-3'])
+    if 'start-pump-4' in json_data.keys():
+        pump_control('start-pump-4', json_data['start-pump-4'])
 
 
 def chiller_control(json_data):
-    if 'nc1' in json_data.keys():
-        pump_ch_control('nc1', json_data['nc1'])
-    if 'nc2' in json_data.keys():
-        pump_ch_control('nc2', json_data['nc2'])
-    if 'nc3' in json_data.keys():
-        pump_control('nc3', json_data['nc3'])
-    if 'nc4' in json_data.keys():
-        pump_ch_control('nc4', json_data['nc4'])
+    if 'start-nc1' in json_data.keys():
+        pump_ch_control('start-nc1', json_data['start-nc1'])
+    if 'start-nc2' in json_data.keys():
+        pump_ch_control('start-nc2', json_data['start-nc2'])
+    if 'start-nc3' in json_data.keys():
+        pump_control('start-nc3', json_data['start-nc3'])
+    if 'start-nc4' in json_data.keys():
+        pump_ch_control('start-nc4', json_data['start-nc4'])

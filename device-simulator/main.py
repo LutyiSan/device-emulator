@@ -37,7 +37,7 @@ if rc == 0:
     while True:
         if rc == 0:
             run_emulator()
-            loop_code = mqtt.loop(timeout=3.0)
+            loop_code = mqtt.loop(timeout=5.0)
             logger.debug(f"loop_code: {loop_code}")
             if loop_code != 0:
                 rc = mqtt.connect(HOST, port=PORT, keepalive=60, bind_address="")
